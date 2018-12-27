@@ -36,15 +36,18 @@ public class CustomerAccountTest {
      */
     @Test
     public void testAccountWithoutMoneyHasZeroBalance() {
-        fail("not yet implemented");
+        assertTrue( customerAccount.getBalance() == 0.0 );
+        //fail("An empty account has to have always a balance of 0.0");
     }
     
     /**
      * Adds money to the account and checks that the new balance is as expected.
      */
     @Test
-    public void testAddPositiveAmount() {
-        fail("not yet implemented");
+    public void testAddPositiveAmount(Double amountToAdd) {
+        assertTrue( amountToAdd > 0.0 );
+        customerAccount.add(amountToAdd);
+        assertFalse( customerAccount.getBalance()<0.0 );
     }
     
     /**
@@ -53,7 +56,8 @@ public class CustomerAccountTest {
      */
     @Test
     public void testWithdrawAndReportBalanceIllegalBalance() {
-        fail("not yet implemented");
+        assertTrue( customerAccount.getBalance() < 0.0 );
+        //fail("not yet implemented");
     }
     
     // Also implement missing unit tests for the above functionalities.
